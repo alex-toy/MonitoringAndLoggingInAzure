@@ -1,6 +1,13 @@
 # Monitoring & Logging
 
-In this exercise, you'll add logging to a web app, check out the logs in the Log stream for the
+## Instructions to launch the project
+
+1. Run **commands\deploy_app.ps1**
+2. Navigate to the Azure SQL console and run starter\script\script.sql in the azure SQL console to create the tables
+
+
+## Description
+In this project, we'll add logging to a web app, check out the logs in the Log stream for the
 app, create access alerts, and send the logs to a storage account for longer-term storage.
 
 If you load the app on its own, you'll notice that this basic app has four buttons, responding

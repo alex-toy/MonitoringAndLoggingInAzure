@@ -1,15 +1,41 @@
-$cfg_file = ".\commands\Configs\var.cfg"
+# az monitor diagnostic-settings create `
+#     --resource-group $RGName `
+#     --name alexeids `
+#     --resource $WAName `
+#     --storage-account $SAName
+    # [--event-hub]
+    # [--event-hub-rule]
+    # [--export-to-resource-specific {false, true}]
+    # [--logs]
+    # [--metrics]
+    # [--resource-namespace]
+    # [--resource-parent]
+    # [--resource-type]
+    # [--workspace]
 
-# (Get-Content -Path $cfg_file) | ForEach-Object { $_ = $_.split("=")[0]; $_ } | Set-Content -Path $cfg_file
 
 
-$BLOB_STORAGE_KEY = "yugiuogihihmjlkljkmlklm"
-
-(Get-Content -Path $cfg_file) | ForEach-Object { 
-    $old = If ($_.split("=")[1]) {'BLOB_STORAGE_KEY=' + $_.split("=")[1]} Else {'BLOB_STORAGE_KEY'}
-    $new = 'BLOB_STORAGE_KEY=' + $BLOB_STORAGE_KEY
-    $_ -Replace $old, $new 
-} | Set-Content -Path $cfg_file
-
-
-
+az monitor diagnostic-settings create `
+    --name alexeids `
+    --resource $WAName `
+    --storage-account $SAName `
+    --logs '[
+      {
+        "category": "WorkflowRuntime",
+        "enabled": true,
+        "retentionPolicy": {
+          "enabled": false,
+          "days": 0
+        }
+      }
+    ] ' `
+    --metrics '[
+      {
+        "category": "WorkflowRuntime",
+        "enabled": true,
+        "retentionPolicy": {
+          "enabled": false,
+          "days": 0
+        }
+      }
+    ]'

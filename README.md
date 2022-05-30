@@ -1,9 +1,19 @@
 # Monitoring & Logging
 
+DIAGNOSTIC SETTINGS NOT WORKING WHEN TRYING TO CREATE THEM PROGRAMMATICALLY!!!
+
 ## Instructions to launch the project
 
 1. Run **commands\deploy_app.ps1**
-2. Navigate to the Azure SQL console and run starter\script\script.sql in the azure SQL console to create the tables
+2. Go the the Diagnostic settings of your app and choose :
+    - Logs -> AppServiceAppLogs
+    - Destination Details -> Archive to a storage account
+3. Go to the Alerts section of your app and add a new alert rule :
+    - condition -> request
+        - alert logic -> greater than / count / threshold = 20
+        - aggregation granularity -> 15 minutes
+        - frequency of evaluation -> 1 minute
+    - action group
 
 
 ## Description

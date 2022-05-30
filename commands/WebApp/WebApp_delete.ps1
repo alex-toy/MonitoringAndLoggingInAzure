@@ -8,6 +8,6 @@ az webapp delete `
 
 
 #Delete an App Service plan
-az appservice plan delete `
-    --name [App Service Plan Name] `
-    --resource-group $RGName
+# az appservice plan delete `
+#     --name [App Service Plan Name] `
+#     --resource-group $RGName

@@ -24,6 +24,27 @@ az webapp up `
     --sku $SKU `
     --verbose
 
+
+
+################################################################
+"CREATE THE DIAGNOSTIC SETTINGS :"
+
+# Not working
+# az monitor diagnostic-settings create `
+#     --resource-group $RGName `
+#     --name alexeids `
+#     --resource $WAName `
+#     --storage-account $SAName
+    # [--event-hub]
+    # [--event-hub-rule]
+    # [--export-to-resource-specific {false, true}]
+    # [--logs]
+    # [--metrics]
+    # [--resource-namespace]
+    # [--resource-parent]
+    # [--resource-type]
+    # [--workspace]
+
 #Go back to root folder
 Set-Location $init_path
 

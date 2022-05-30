@@ -15,4 +15,6 @@ $Global:AppPath = ".\app"
 
 az group create --name $RGName --location $RGLocation
 
+."commands\StorageAccount\StorageAccount_create.ps1"
+
 ."commands\WebApp\WebApp_create.ps1"
